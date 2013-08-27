@@ -11,7 +11,7 @@ unimarkChunk.text = function(chunk) {
 };
 
 unimarkChunk.markdown = function(chunk) {
-  return '<span class="unimark-markdown">' + marked(chunk.content) + '</span>\n\n';
+  return '<span class="unimark-markdown">' + Unimark.marked(chunk.content) + '</span>\n\n';
 };
 
 unimarkChunk.code = function(chunk) {
