@@ -73,7 +73,11 @@ var unimark = function(text) {
       if(paramsy) {
         paramsy = false;
       } else {
-        chunk.content = chunk.content + '\n' + line;
+        if(chunk.content.length === 0) {
+          chunk.content = '' + line;
+        } else {
+          chunk.content = chunk.content + '\n' + line;
+        }
       }
     }
 
