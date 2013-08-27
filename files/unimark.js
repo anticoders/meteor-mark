@@ -57,7 +57,7 @@ var unimark = function(text) {
       chunk = {
         type: matchNewChunk[1],
         content: '',
-        params: true,
+        params: {},
       };
       chunks.push(chunk);
       paramsy = true;
