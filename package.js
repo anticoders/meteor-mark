@@ -7,7 +7,7 @@ Package.on_use(function (api, where) {
 
   if(api.export) {
 
-    api.use(['handlebars'], 'client');
+    api.use(['handlebars', 'underscore'], 'client');
     api.export('Unimark', 'client');
     
   }

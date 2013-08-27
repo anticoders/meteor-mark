@@ -4,27 +4,34 @@ var unimarkChunk = {};
 
 var textReplace = function(text) {
   return text.replace(/\&/g, '&amp;').replace(/\</g, '&lt;').replace(/\>/g, '&gt;');
-}
+};
 
 unimarkChunk.text = function(chunk) {
   return '<span class="unimark-text"><p>' + textReplace(chunk.content).replace(/\n\s*\n/g, '\n</p><p>\n') + '</p></span>\n\n';
-}
+};
 
 unimarkChunk.markdown = function(chunk) {
   return '<span class="unimark-markdown">' + marked(chunk.content) + '</span>\n\n';
-}
+};
 
 unimarkChunk.code = function(chunk) {
-  return '<span class="unimark-code"><pre><code>' + textReplace(chunk.content) + '</code></pre></span>\n\n';
-}
+  return _.template('<span class="unimark-code" data-language="<%= language %>">' +
+    '<pre><code><%= content %></code></pre>' +
+    '</span>\n\n', {
+    language: chunk.params.language ? chunk.params.language : chunk.params.lang ? chunk.params.lang : '',
+    content: textReplace(chunk.content),
+  });
+};
 
 unimarkChunk.image = function(chunk) {
   return '<span class="unimark-image"><img src="' + chunk.params.src + '"/>' + chunk.content + '</span>\n\n';
-}
+};
+
+unimarkChunk.img = unimarkChunk.image;
 
 unimarkChunk.message = function(chunk) {
   return '<span class="unimark-message">' + chunk.content + '</span>\n\n';
-}
+};
 
 
 var unimark = function(text) {
