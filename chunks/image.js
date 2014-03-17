@@ -8,7 +8,7 @@ _.extend(ImageChunk.prototype, {
 });
 
 Unimark.parsers.image = {
-  constructor: TextChunk,
+  constructor: ImageChunk,
   aliases: ['img'],
 };
 
