@@ -50,10 +50,22 @@ _.extend(Unimark.converter.prototype, {
 });
 
 
+UI.registerHelper('unimark', UI.block(function () {
+  var self = this;
+  return function () {
+    var text = UI.toRawText(self.__content, self);
+    var converter = new Unimark.converter();
+    return HTML.Raw(converter.makeHtml(text));
+  };
+}));
 
-Handlebars.registerHelper('unimark', function (options) {
-  var converter = new Unimark.converter();
-  return converter.makeHtml(options.fn(this));
-});
+
+
+
+
+
+
+
+
 
 

@@ -5,13 +5,7 @@ Package.describe({
 
 Package.on_use(function (api, where) {
 
-  if(api.export) {
-
-    api.use(['handlebars', 'underscore', 'showdown'], 'client');
-    api.export('Unimark', 'client');
-    
-  }
-
+  api.use(['ui', 'underscore', 'showdown'], 'client');
 
   api.add_files([
     'unimark.js',
@@ -21,6 +15,7 @@ Package.on_use(function (api, where) {
     'chunks/template.js',
   ], 'client');
 
+  api.export('Unimark', 'client');
 
 });
 
