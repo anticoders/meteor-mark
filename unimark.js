@@ -49,23 +49,12 @@ _.extend(Unimark.converter.prototype, {
 
 });
 
-
-UI.registerHelper('unimark', UI.block(function () {
-  var self = this;
-  return function () {
-    var text = UI.toRawText(self.__content, self);
-    var converter = new Unimark.converter();
-    return HTML.Raw(converter.makeHtml(text));
-  };
+UI.registerHelper("unimark", Template.__create__('unimark', function () {
+  var view = this;
+  var content = '';
+  if (view.templateContentBlock) {
+    content = Blaze.toText(view.templateContentBlock, HTML.TEXTMODE.STRING);
+  }
+  var converter = new Unimark.converter();
+  return HTML.Raw(converter.makeHtml(content));
 }));
-
-
-
-
-
-
-
-
-
-
-
