@@ -5,7 +5,7 @@ Package.describe({
 
 Package.on_use(function (api, where) {
 
-  api.use(['ui', 'underscore', 'showdown'], 'client');
+  api.use(['templating', 'ui', 'underscore', 'showdown'], 'client');
 
   api.add_files([
     'unimark.js',
