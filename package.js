@@ -1,9 +1,9 @@
 
 Package.describe({
-  name:     "anticoders:unimark",
-  version:  "0.5.1",
+  name:     "anti:mark",
+  version:  "0.6.0",
   summary:  "Universal text document markup syntax",
-  git:      "https://github.com/anticoders/meteor-unimark.git",
+  git:      "https://github.com/anticoders/meteor-mark.git",
 });
 
 Package.on_use(function (api, where) {
