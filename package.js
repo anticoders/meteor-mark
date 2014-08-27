@@ -1,10 +1,13 @@
 
 Package.describe({
-  summary: "Universal text document markup syntax",
+  name:     "anticoders:unimark",
+  version:  "0.5.1",
+  summary:  "Universal text document markup syntax",
+  git:      "https://github.com/anticoders/meteor-unimark.git",
 });
 
 Package.on_use(function (api, where) {
-
+  api.versionsFrom('0.9.0');
   api.use(['templating', 'ui', 'underscore', 'showdown'], 'client');
 
   api.add_files([
