@@ -1,14 +1,14 @@
 
 Package.describe({
   name:     "anti:mark",
-  version:  "0.6.0",
+  version:  "0.6.1",
   summary:  "Universal text document markup syntax",
   git:      "https://github.com/anticoders/meteor-mark.git",
 });
 
 Package.on_use(function (api, where) {
-  api.versionsFrom('0.9.0');
-  api.use(['templating', 'ui', 'underscore', 'showdown'], 'client');
+  api.versionsFrom('0.9.1');
+  api.use(['templating', 'underscore', 'showdown'], 'client');
 
   api.add_files([
     'unimark.js',
@@ -21,11 +21,3 @@ Package.on_use(function (api, where) {
   api.export('Unimark', 'client');
 
 });
-
-
-
-
-
-
-
-

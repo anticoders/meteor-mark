@@ -49,11 +49,11 @@ _.extend(Unimark.converter.prototype, {
 
 });
 
-UI.registerHelper("unimark", Template.__create__('unimark', function () {
+Template.registerHelper("unimark", new Template('unimark', function () {
   var view = this;
   var content = '';
   if (view.templateContentBlock) {
-    content = Blaze.toText(view.templateContentBlock, HTML.TEXTMODE.STRING);
+    content = Blaze._toText(view.templateContentBlock, HTML.TEXTMODE.STRING);
   }
   var converter = new Unimark.converter();
   return HTML.Raw(converter.makeHtml(content));
