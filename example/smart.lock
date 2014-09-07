@@ -1,0 +1,15 @@
+{
+  "meteor": {},
+  "dependencies": {
+    "basePackages": {
+      "anti:mark": {
+        "path": ".."
+      }
+    },
+    "packages": {
+      "anti:mark": {
+        "path": ".."
+      }
+    }
+  }
+}

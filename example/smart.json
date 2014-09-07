@@ -1,0 +1,7 @@
+{
+  "packages": {
+    "anti:mark": {
+      "path": ".."
+    }
+  }
+}
